@@ -18,3 +18,12 @@ int main(){
     }
     return 0;
 }
+//funcoes
+void insereContato(){
+    printf("Informe o nome do contato: ");
+    // scanf("%d", contato.nome);
+}
+void menu(){
+    printf("--Menu de interações--");
+    printf("1- Inserir contato");
+}
