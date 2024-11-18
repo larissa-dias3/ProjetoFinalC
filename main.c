@@ -1,18 +1,19 @@
 #include <stdio.h>
-
-typedef struct {
-    char nome[50];
-    char email[50];
-    char telefone[15];
-    char cpf[15];
-} contato;
-
-typedef struct {
-    contato *contatos;
-    int prox;
-    int ant;
-} elo;
-
+#include "main.h"
 int main(){
+    int operacao;
+    //mostra menu
+    menu();
+    printf("Informe o numero da operacao que deseja executar: ");
+    scanf("%d", &operacao);
+    switch (operacao)
+    {
+    case 1:
+        insereContato();
+        break;
+    
+    default:
+        break;
+    }
     return 0;
 }
