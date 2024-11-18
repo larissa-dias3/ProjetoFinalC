@@ -18,13 +18,6 @@ typedef struct {
     int tamanho;
 } lista; // lista de contatos
 
-// Funções
-void menu(){
-    printf("--Menu de interações--");
-    printf("1- Inserir contato");
-
-}
-void insereContato(){
-    printf("Informe o nome do contato: ");
-    // scanf("%d", contato.nome);
-}
+// Assinaturas funções
+void menu();
+void insereContato();
