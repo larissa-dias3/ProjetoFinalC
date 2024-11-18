@@ -6,13 +6,13 @@ int main(){
     menu();
     printf("Informe o numero da operacao que deseja executar: ");
     scanf("%d", &operacao);
-    switch (operacao)
-    {
+
+    switch (operacao){
     case 1:
         insereContato();
         break;
     
-    default:
+    default:    
         break;
     }
     return 0;

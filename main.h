@@ -12,12 +12,14 @@ typedef struct {
     int ant;
 } elo; //elo de contato 
 
+
 // Funções
 void menu(){
     printf("--Menu de interações--");
-    printf("1- Inserir um contato");
+    printf("1- Inserir contato");
 
 }
 void insereContato(){
-    
+    printf("Informe o nome do contato: ");
+    // scanf("%d", contato.nome);
 }
