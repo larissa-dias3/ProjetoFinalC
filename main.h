@@ -1,3 +1,7 @@
+// Assinaturas funções
+void menu();
+void insereContato();
+
 #include <stdio.h>
 typedef struct {
     char nome[50];
@@ -18,6 +22,3 @@ typedef struct {
     int tamanho;
 } lista; // lista de contatos
 
-// Assinaturas funções
-void menu();
-void insereContato();

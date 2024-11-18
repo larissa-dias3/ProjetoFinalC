@@ -21,7 +21,7 @@ int main(){
 //funcoes
 void insereContato(){
     printf("Informe o nome do contato: ");
-    // scanf("%d", contato.nome);
+    
 }
 void menu(){
     printf("--Menu de interações--");
