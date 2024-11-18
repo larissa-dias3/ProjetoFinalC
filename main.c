@@ -8,10 +8,16 @@ typedef struct {
 } contato;
 
 typedef struct {
-    contato *contatos;
-    int prox;
-    int ant;
+    contato contatos;
+    struct elo* proximo;
+    struct elo* anterior;
 } elo;
+
+typedef struct {
+    elo* inicio;
+    elo* fim;
+    int tamanho;
+} lista;
 
 int main(){
     return 0;
