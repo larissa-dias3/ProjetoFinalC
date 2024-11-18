@@ -7,11 +7,16 @@ typedef struct {
 } contato; //registro pra contato
 
 typedef struct {
-    contato *contatos;
-    int prox;
-    int ant;
+    contato contatos;
+    struct elo* proximo;
+    struct elo* anterior;
 } elo; //elo de contato 
 
+typedef struct {
+    elo* inicio;
+    elo* fim;
+    int tamanho;
+} lista; // lista de contatos
 
 // Funções
 void menu(){
