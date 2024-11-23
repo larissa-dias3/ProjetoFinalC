@@ -20,5 +20,7 @@ typedef struct {
 // Assinaturas funções
 void inicializar(t_headerLista* lista);
 int vazia(t_headerLista* lista);
-void menu();
 void insereContato();
+
+
+void menu();

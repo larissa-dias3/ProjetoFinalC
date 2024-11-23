@@ -28,6 +28,11 @@ void inicializar (t_headerLista *lista){
     lista->fim = NULL;
     lista->tamanho = 0;
 }
+
+int vazia(t_headerLista *lista){
+    return (lista->inicio == NULL);
+}
+
 void insereContato(t_contato contato){
 
     printf("Informe o nome do contato: ");
