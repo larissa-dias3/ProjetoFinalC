@@ -18,9 +18,27 @@ typedef struct {
 } t_headerLista; // lista de contatos
 
 // Assinaturas funções
+
+//inicializa com null as posicoes
 void inicializar(t_headerLista* lista);
+
+//verifica se a lista está vazia com boolean
 int vazia(t_headerLista* lista);
-void insereContato();
 
+//insere contatos na lista
+int insereContato(t_headerLista *lista, t_contato contato, int posicao);
 
+//imprime um contato especifico
+int imprimeContato(t_headerLista *lista);
+
+//mostra todos os contatos
+int listaContatos();
+
+//remove contato
+int removeContato(t_headerLista *lista, t_contato contato, int posicao);
+
+//organiza em oredem alfabetica
+int verificaOrdem();
+
+//mostra menu de iteracoes
 void menu();

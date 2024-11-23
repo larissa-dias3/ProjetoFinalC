@@ -14,7 +14,7 @@ int main(){
 
     switch (operacao){
     case 1:
-        insereContato(contato);
+        insereContato(&lista, contato, 1);
         break;
     
     default:    
@@ -33,7 +33,7 @@ int vazia(t_headerLista *lista){
     return (lista->inicio == NULL);
 }
 
-void insereContato(t_headerLista *fila, t_contato contato){
+int insereContato(t_headerLista *fila, t_contato contato, int posicao) {
     t_elo *novo_elo = (t_elo*) malloc(sizeof(t_elo)); // aloca espaço para o novo elo
 
     if (novo_elo == NULL) { // se não conseguir alocar
@@ -61,6 +61,12 @@ void insereContato(t_headerLista *fila, t_contato contato){
     return 1;
 }
 void menu(){
-    printf("--Menu de interações--");
+    printf("--Agenda--");
     printf("1- Inserir contato");
+    printf("2- Remover contato");
+    printf("3- Consultar contato");
+    printf("4- Listar todos os contato");
+    printf("5- Sair");
+    printf("-----------");
+
 }
