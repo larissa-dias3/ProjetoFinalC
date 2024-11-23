@@ -3,6 +3,7 @@
 
 int main(){
     int operacao;
+    contato c;
     //mostra menu
     menu();
     printf("Informe o numero da operacao que deseja executar: ");
@@ -10,7 +11,7 @@ int main(){
 
     switch (operacao){
     case 1:
-        insereContato();
+        insereContato(c);
         break;
     
     default:    
@@ -19,9 +20,24 @@ int main(){
     return 0;
 }
 //funcoes
-void insereContato(){
+void inicializar (lista *l){
+    l->elo = NULL;
+    l->contato = NULL;
+    l->size = 0;
+}
+void insereContato(contato c){
     printf("Informe o nome do contato: ");
-    
+    gets(c.nome);
+
+    printf("Informe o email do contato: ");
+    gets(c.nome);
+
+    printf("Informe o telefone do contato: ");
+    scanf("%s", &contato.telefone);
+
+    printf("Informe o cpf do contato: ");
+    scanf("%s", &contato.cpf);
+
 }
 void menu(){
     printf("--Menu de interações--");
