@@ -49,6 +49,12 @@ int insereContato(t_contato contato){
 
 }
 void menu(){
-    printf("--Menu de interações--");
+    printf("--Agenda--");
     printf("1- Inserir contato");
+    printf("2- Remover contato");
+    printf("3- Consultar contato");
+    printf("4- Listar todos os contato");
+    printf("5- Sair");
+    printf("-----------");
+
 }
