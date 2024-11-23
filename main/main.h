@@ -28,11 +28,17 @@ int vazia(t_headerLista* lista);
 //insere contatos na lista
 int insereContato(t_headerLista *lista, t_contato contato, int posicao);
 
-//mostra dados
-int imprimeFila(t_headerLista *lista);
+//imprime um contato especifico
+int imprimeContato(t_headerLista *lista);
+
+//mostra todos os contatos
+int listaContatos();
 
 //remove contato
 int removeContato(t_headerLista *lista, t_contato contato, int posicao);
+
+//organiza em oredem alfabetica
+int verificaOrdem();
 
 //mostra menu de iteracoes
 void menu();
