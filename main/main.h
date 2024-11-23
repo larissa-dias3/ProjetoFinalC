@@ -20,5 +20,5 @@ typedef struct {
     elo* inicio;
     elo* fim;
     int tamanho;
-} lista; // lista de contatos
+} headerLista; // lista de contatos
 

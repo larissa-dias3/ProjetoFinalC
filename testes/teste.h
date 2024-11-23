@@ -1,3 +1,4 @@
+
 typedef struct{
 	int dado;
 	struct tipoNo* prox;

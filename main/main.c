@@ -4,6 +4,9 @@
 int main(){
     int operacao;
     contato c;
+    headerLista lista;
+
+    inicializar(&lista);
     //mostra menu
     menu();
     printf("Informe o numero da operacao que deseja executar: ");
@@ -20,12 +23,13 @@ int main(){
     return 0;
 }
 //funcoes
-void inicializar (lista *l){
-    l->elo = NULL;
-    l->contato = NULL;
-    l->size = 0;
+void inicializar (headerLista *lista){
+    lista->inicio = NULL;
+    lista->fim = NULL;
+    lista->tamanho = 0;
 }
 void insereContato(contato c){
+
     printf("Informe o nome do contato: ");
     gets(c.nome);
 
