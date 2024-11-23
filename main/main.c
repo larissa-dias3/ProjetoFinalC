@@ -3,8 +3,8 @@
 
 int main(){
     int operacao;
-    contato c;
-    headerLista lista;
+    t_contato contato; // provalvemente não é aqui que vai ser declarado
+    t_headerLista lista;
 
     inicializar(&lista);
     //mostra menu
@@ -14,7 +14,7 @@ int main(){
 
     switch (operacao){
     case 1:
-        insereContato(c);
+        insereContato(contato);
         break;
     
     default:    
@@ -23,18 +23,18 @@ int main(){
     return 0;
 }
 //funcoes
-void inicializar (headerLista *lista){
+void inicializar (t_headerLista *lista){
     lista->inicio = NULL;
     lista->fim = NULL;
     lista->tamanho = 0;
 }
-void insereContato(contato c){
+void insereContato(t_contato contato){
 
     printf("Informe o nome do contato: ");
-    gets(c.nome);
+    gets(contato.nome);
 
     printf("Informe o email do contato: ");
-    gets(c.nome);
+    gets(contato.nome);
 
     printf("Informe o telefone do contato: ");
     scanf("%s", &contato.telefone);

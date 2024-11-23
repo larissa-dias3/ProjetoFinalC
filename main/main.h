@@ -1,24 +1,24 @@
-// Assinaturas funções
-void menu();
-void insereContato();
-
-#include <stdio.h>
 typedef struct {
     char nome[50];
     char email[50];
     char telefone[15];
     char cpf[15];
-} contato; //registro pra contato
+} t_contato; // registro para contato
 
 typedef struct {
-    contato contatos;
-    struct elo* proximo;
-    struct elo* anterior;
-} elo; //elo de contato 
+    t_contato contato;
+    struct t_elo* proximo;
+    struct t_elo* anterior;
+} t_elo; // elo da lista
 
 typedef struct {
-    elo* inicio;
-    elo* fim;
+    t_elo* inicio;
+    t_elo* fim;
     int tamanho;
-} headerLista; // lista de contatos
+} t_headerLista; // lista de contatos
 
+// Assinaturas funções
+void inicializar(t_headerLista* lista);
+int vazia(t_headerLista* lista);
+void menu();
+void insereContato();
