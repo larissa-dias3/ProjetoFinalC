@@ -13,14 +13,26 @@ typedef struct{
 void inicializar (tFila *f);
 
 int vazia (tFila *f);//retorna 1 se a fila está vazia
-					//retorna 0 se a fila é não-vazia
+	if(*f == NULL){
+		return 1;
+
+	}else{
+		return 0;//retorna 0 se a fila é não-vazia
+	}			
 
 int inserir(tFila *f, int d);
+		
 	//retorna 1 se a insercao deu certo
 	//retorna 0 se a insercao deu errado
 
-void imprimeFila (tFila *f);
-	//imprime na tela o conteudo da fila
+// void imprimeFila (tFila *f);
+	void imprimeFila (tFila *f) {
+		tipoNo* atual = f->head;
+		while (atual != NULL) {
+			printf("%d\n", atual->dado);
+			atual = atual->prox;
+		}
+	}	//imprime na tela o conteudo da fila
 
 int remover(tFila *f, int *d);
 	//retorna 0 se a remocao deu certo
