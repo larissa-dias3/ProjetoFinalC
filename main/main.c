@@ -12,29 +12,32 @@ int main(){
     //mostra menu
     menu();
     printf("Informe o numero da operacao que deseja executar: ");
-    scanf("%d", &operacao);
+    scanf("%d", &operacao); getchar();
 
-    switch (operacao){
-    case 1:
-        insereContato(&lista, contato);
-        break;
-    case 2:
-        removeContato(&lista, contato, posicao);
-        break;
-    case 3:
-        consultaContato(&lista, contato);
-        break;
-    case 4:
-        listaContatos(&lista);
-        break;
-    case 5:
-        printf("Saindo...");
-        break;
-    default:    
-        break;
+    while(operacao != 5) {
+        switch (operacao){
+            case 1:
+                insereContato(&lista, contato);
+                break;
+            case 2:
+                // removeContato(&lista, contato, posicao);
+                break;
+            case 3:
+                // consultaContato(&lista, contato);
+                break;
+            case 4:
+                listaContatos(&lista);
+                break;
+            case 5:
+                printf("Saindo...");
+                break;
+            default:    
+                break;
+            }
     }
      return 0;
 }
+
 int listaContatos(t_headerLista *lista){
     printf("Lista de contatos: ");
     //acessando os campos de contato percorrendo a lista 
