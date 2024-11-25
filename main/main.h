@@ -5,15 +5,15 @@ typedef struct {
     char cpf[15];
 } t_contato; // registro para contato
 
-typedef struct {
+typedef struct s_elo {
     t_contato contato;
-    struct t_elo* proximo;
-    struct t_elo* anterior;
+    struct s_elo* proximo;
+    struct s_elo* anterior;
 } t_elo; // elo da lista
 
 typedef struct {
-    t_elo* inicio;
-    t_elo* fim;
+    struct s_elo* inicio;
+    struct s_elo* fim;
     int tamanho;
 } t_headerLista; // lista de contatos
 
@@ -38,7 +38,7 @@ int listaContatos();
 int removeContato(t_headerLista *lista, t_contato contato, int posicao);
 
 //organiza em oredem alfabetica
-int verificaOrdem(t_headerLista *lista, t_contato contato);
+// int verificaOrdem(t_headerLista *lista, t_contato contato);
 
 //mostra menu de iteracoes
 void menu();
