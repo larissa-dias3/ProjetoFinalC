@@ -3,23 +3,19 @@
 #include "main.h"
 
 int main(){
-    int posicao;//precisa?
     int operacao;
-    t_contato contato; // provalvemente não é aqui que vai ser declarado
     t_headerLista lista;
 
     inicializar(&lista);
-    //mostra menu
-    menu();
-    
-
     do {
+        //mostra menu
+        menu();
         printf("Informe o numero da operacao que deseja executar: ");
         scanf("%d", &operacao); getchar();
         
         switch (operacao){
             case 1:
-                insereContato(&lista, contato);
+                insereContato(&lista);
                 break;
             case 2:
                 // removeContato(&lista, contato, posicao);
@@ -76,7 +72,7 @@ void inicializar(t_headerLista *lista){
 }
 
 //insere um contato na lista
-int insereContato(t_headerLista *lista, t_contato contato) {
+int insereContato(t_headerLista *lista) {
     t_elo *novo_elo = (t_elo*) malloc(sizeof(t_elo)); // aloca espaço para o novo elo
 
     if (novo_elo == NULL) { // se não conseguir alocar
