@@ -83,20 +83,6 @@ int insereContato(t_headerLista *lista, t_contato contato) {
         return 0;
     }
 
-    novo_elo->contato = contato; // atribui o contato ao novo elo
-    novo_elo->proximo = NULL; // o próximo do novo elo é nulo
-    novo_elo->anterior = lista->fim; // o anterior do novo elo é o fim da lista
-
-    if (vazia(lista)) {
-        lista->inicio = novo_elo;
-    } else {
-        lista->fim->proximo = novo_elo;
-    }
-
-    lista->fim = novo_elo;
-
-    lista->tamanho++;
-
     t_contato novo_contato;
 
     printf("Informe o nome do contato: ");
@@ -111,7 +97,20 @@ int insereContato(t_headerLista *lista, t_contato contato) {
     printf("Informe o cpf do contato: ");
     fgets(novo_contato.cpf, 15, stdin);
 
-    
+    novo_elo->contato = novo_contato; // atribui o contato ao novo elo
+    novo_elo->proximo = NULL; // o próximo do novo elo é nulo
+    novo_elo->anterior = lista->fim; // o anterior do novo elo é o fim da lista
+
+    if (vazia(lista)) {
+        lista->inicio = novo_elo;
+    } else {
+        lista->fim->proximo = novo_elo;
+    }
+
+    lista->fim = novo_elo;
+
+    lista->tamanho++;
+
     // verificaOrdem(&lista, novo_contato);
 
     return 1;
