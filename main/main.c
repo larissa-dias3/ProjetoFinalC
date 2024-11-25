@@ -100,7 +100,7 @@ int insereContato(t_headerLista *lista, t_contato contato) {
     fgets(novo_contato.cpf, 15, stdin);
 
     
-    verificaOrdem(&lista, novo_contato);
+    // verificaOrdem(&lista, novo_contato);
 
     return 1;
 }
@@ -109,12 +109,12 @@ int insereContato(t_headerLista *lista, t_contato contato) {
 
 
 void menu(){
-    printf("--Agenda--");
-    printf("1- Inserir contato");
-    printf("2- Remover contato");
-    printf("3- Consultar contato");//consulta por indice?
-    printf("4- Listar todos os contato");
-    printf("5- Sair");
-    printf("-----------");
+    printf("--Agenda--\n");
+    printf("1- Inserir contato\n");
+    printf("2- Remover contato\n");
+    printf("3- Consultar contato\n");//consulta por indice?
+    printf("4- Listar todos os contato\n");
+    printf("5- Sair\n");
+    printf("-----------\n");
 
 }
