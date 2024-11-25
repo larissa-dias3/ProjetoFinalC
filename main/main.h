@@ -26,7 +26,7 @@ void inicializar(t_headerLista* lista);
 int vazia(t_headerLista* lista);
 
 //insere contatos na lista
-int insereContato(t_headerLista *lista, t_contato contato, int posicao);
+int insereContato(t_headerLista *lista, t_contato contato);
 
 //imprime um contato especifico
 int imprimeContato(t_headerLista *lista);
@@ -38,7 +38,7 @@ int listaContatos();
 int removeContato(t_headerLista *lista, t_contato contato, int posicao);
 
 //organiza em oredem alfabetica
-int verificaOrdem();
+int verificaOrdem(t_headerLista *lista, t_contato contato);
 
 //mostra menu de iteracoes
 void menu();
