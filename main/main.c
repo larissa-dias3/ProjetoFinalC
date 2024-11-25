@@ -13,6 +13,7 @@ int main(){
     menu();
     printf("Informe o numero da operacao que deseja executar: ");
     scanf("%d", &operacao); getchar();
+    scanf("%d", &operacao); getchar();
 
     while(operacao != 5) {
         switch (operacao){
@@ -39,9 +40,16 @@ int main(){
 }
 
 int listaContatos(t_headerLista *lista){
-    printf("Lista de contatos: ");
+    printf("Lista de contatos: \n");
     //acessando os campos de contato percorrendo a lista 
     t_elo *acessaElo = lista->inicio;
+    //verifica se a lista esta vazia
+    if(vazia(lista)){
+        printf("Voce nao tem nenhum contato\n");
+        return 0;
+    }
+    
+    //se nao estiver printa contatos
     while(acessaElo != NULL){
         printf("Nome: %s\n", acessaElo->contato.nome);
         printf("Email: %s\n", acessaElo->contato.email);
@@ -90,16 +98,16 @@ int insereContato(t_headerLista *lista, t_contato contato) {
 
     t_contato novo_contato;
 
-    printf("Informe o nome do contato: ");
+    printf("Informe o nome do contato: \n");
     fgets(novo_contato.nome, 50, stdin);
 
-    printf("Informe o email do contato: ");
+    printf("Informe o email do contato: \n");
     fgets(novo_contato.email, 50, stdin);
 
-    printf("Informe o telefone do contato: ");
+    printf("Informe o telefone do contato: \n");
     fgets(novo_contato.telefone, 15, stdin);
 
-    printf("Informe o cpf do contato: ");
+    printf("Informe o cpf do contato: \n");
     fgets(novo_contato.cpf, 15, stdin);
 
     
