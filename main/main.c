@@ -11,11 +11,12 @@ int main(){
     inicializar(&lista);
     //mostra menu
     menu();
-    printf("Informe o numero da operacao que deseja executar: ");
-    scanf("%d", &operacao); getchar();
-    scanf("%d", &operacao); getchar();
+    
 
-    while(operacao != 5) {
+    do {
+        printf("Informe o numero da operacao que deseja executar: ");
+        scanf("%d", &operacao); getchar();
+        
         switch (operacao){
             case 1:
                 insereContato(&lista, contato);
@@ -35,7 +36,7 @@ int main(){
             default:    
                 break;
             }
-    }
+    } while(operacao != 5);
      return 0;
 }
 
@@ -98,16 +99,16 @@ int insereContato(t_headerLista *lista, t_contato contato) {
 
     t_contato novo_contato;
 
-    printf("Informe o nome do contato: \n");
+    printf("Informe o nome do contato: ");
     fgets(novo_contato.nome, 50, stdin);
 
-    printf("Informe o email do contato: \n");
+    printf("Informe o email do contato: ");
     fgets(novo_contato.email, 50, stdin);
 
-    printf("Informe o telefone do contato: \n");
+    printf("Informe o telefone do contato: ");
     fgets(novo_contato.telefone, 15, stdin);
 
-    printf("Informe o cpf do contato: \n");
+    printf("Informe o cpf do contato: ");
     fgets(novo_contato.cpf, 15, stdin);
 
     
