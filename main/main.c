@@ -23,7 +23,7 @@ int main(){
     return 0;
 }
 
-
+//verifica se lista esta vazia
 int vazia(t_headerLista *lista){
     return (lista->inicio == NULL);
 }
@@ -36,6 +36,7 @@ void inicializar(t_headerLista *lista){
     lista->tamanho = 0;
 }
 
+//insere um contato na lista
 int insereContato(t_headerLista *lista, t_contato contato) {
     t_elo *novo_elo = (t_elo*) malloc(sizeof(t_elo)); // aloca espaço para o novo elo
 
@@ -60,16 +61,16 @@ int insereContato(t_headerLista *lista, t_contato contato) {
     t_contato novo_contato;
 
     printf("Informe o nome do contato: ");
-    gets(novo_contato.nome);
+    fgets(novo_contato.nome, 50, stdin);
 
     printf("Informe o email do contato: ");
-    gets(novo_contato.email);
+    fgets(novo_contato.email, 50, stdin);
 
     printf("Informe o telefone do contato: ");
-    gets(novo_contato.telefone);
+    fgets(novo_contato.telefone, 15, stdin);
 
     printf("Informe o cpf do contato: ");
-    gets(novo_contato.cpf);
+    fgets(novo_contato.cpf, 15, stdin);
 
     
     verificaOrdem(&lista, novo_contato);
@@ -87,7 +88,7 @@ void menu(){
     printf("--Agenda--");
     printf("1- Inserir contato");
     printf("2- Remover contato");
-    printf("3- Consultar contato");
+    printf("3- Consultar contato");//consulta por indice?
     printf("4- Listar todos os contato");
     printf("5- Sair");
     printf("-----------");
