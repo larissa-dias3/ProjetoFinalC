@@ -92,6 +92,8 @@ int insereContato(t_headerLista *lista) {
 
     printf("Informe o cpf do contato: ");
     fgets(novo_contato.cpf, 15, stdin);
+    
+    verificaOrdem(lista, novo_contato);
 
     novo_elo->contato = novo_contato; // atribui o contato ao novo elo
     novo_elo->proximo = NULL; // o próximo do novo elo é nulo
@@ -107,13 +109,43 @@ int insereContato(t_headerLista *lista) {
 
     lista->tamanho++;
 
-    // verificaOrdem(&lista, novo_contato);
 
     return 1;
 }
 
 // verifica se o contato está em ordem alfabética pelo cpf
+int verificaOrdem(t_headerLista *lista, t_contato contato) {
+    // ordenar por cpf de forma decrescente e retornar a lista na ordem correta
+    t_elo *acessaElo = lista->inicio;
+    while(acessaElo != NULL){
+        if (strcmp(acessaElo->contato.cpf, contato.cpf) > 0) {
+            // se o cpf do elo atual for maior que o cpf do contato, insere o contato antes do elo atual
+            t_elo *novo_elo = (t_elo*) malloc(sizeof(t_elo)); // aloca espaço para o novo elo
 
+            if (novo_elo == NULL) { // se não conseguir alocar
+                return 0;
+            }
+
+            novo_elo->contato = contato; // atribui o contato ao novo elo
+            novo_elo->proximo = acessaElo; // o próximo do novo elo é o elo atual
+            novo_elo->anterior = acessaElo->anterior; // o anterior do novo elo é o anterior do elo atual
+
+            if (acessaElo->anterior != NULL) {
+                acessaElo->anterior->proximo = novo_elo;
+            } else {
+                lista->inicio = novo_elo;
+            }
+
+            acessaElo->anterior = novo_elo;
+
+            lista->tamanho++;
+
+            return 1;
+        }
+
+        acessaElo = acessaElo->proximo;
+    }
+}
 
 void menu(){
     printf("--Agenda--\n");

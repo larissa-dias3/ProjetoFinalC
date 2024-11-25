@@ -38,7 +38,7 @@ int listaContatos();
 int removeContato(t_headerLista *lista, t_contato contato, int posicao);
 
 //organiza em oredem alfabetica
-// int verificaOrdem(t_headerLista *lista, t_contato contato);
+int verificaOrdem(t_headerLista *lista, t_contato contato);
 
 //mostra menu de iteracoes
 void menu();
