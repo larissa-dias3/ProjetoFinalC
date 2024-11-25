@@ -3,6 +3,7 @@
 #include "main.h"
 
 int main(){
+    int posicao;//precisa?
     int operacao;
     t_contato contato; // provalvemente não é aqui que vai ser declarado
     t_headerLista lista;
@@ -17,13 +18,38 @@ int main(){
     case 1:
         insereContato(&lista, contato);
         break;
-    
+    case 2:
+        removeContato(&lista, contato, posicao);
+        break;
+    case 3:
+        consultaContato(&lista, contato);
+        break;
+    case 4:
+        listaContatos(&lista);
+        break;
+    case 5:
+        printf("Saindo...");
+        break;
     default:    
         break;
     }
-    return 0;
+     return 0;
 }
+int listaContatos(t_headerLista *lista){
+    printf("Lista de contatos: ");
+    //acessando os campos de contato percorrendo a lista 
+    t_elo *acessaElo = lista->inicio;
+    while(acessaElo != NULL){
+        printf("Nome: %s\n", acessaElo->contato.nome);
+        printf("Email: %s\n", acessaElo->contato.email);
+        printf("Telefone: %s\n", acessaElo->contato.telefone);
+        printf("CPF: %s\n", acessaElo->contato.cpf);
+       acessaElo = acessaElo->proximo;
+    }
 
+    return 1;
+
+}
 //verifica se lista esta vazia
 int vazia(t_headerLista *lista){
     return (lista->inicio == NULL);
@@ -75,9 +101,6 @@ int insereContato(t_headerLista *lista, t_contato contato) {
 
     
     verificaOrdem(&lista, novo_contato);
-
-
-    
 
     return 1;
 }
