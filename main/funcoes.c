@@ -307,5 +307,6 @@ void menu(){
     printf("2- Remover contato\n");
     printf("3- Consultar contato\n");//consulta por indice?
     printf("4- Listar todos os contato\n");
-    printf("5- Sair\n");
+    printf("5- Esvaziar lista de contatos\n");
+    printf("6- Sair\n");
 }
