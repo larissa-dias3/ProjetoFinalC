@@ -41,7 +41,7 @@ int main(){
             default:    
                 break;
             }
-    } while(operacao != 5);
+    } while(operacao != 6);
      return 0;
 }
 
