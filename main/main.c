@@ -38,7 +38,9 @@ int main(){
             case 6:
                 printf("\nSaindo...\n\n");
                 break;
-            default:    
+            default: 
+                system("clear");
+                printf("\n** Operacao invalida! **\n\n");   
                 break;
             }
     } while(operacao != 6);
